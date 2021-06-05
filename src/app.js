@@ -1,13 +1,22 @@
 // Components
 import React from 'react';
+import { Filter } from './components/Filter';
+import { Head } from './components/Head';
+import { CurrentWeather } from './components/CurrentWeather';
+import { Forecast } from './components/Forecast';
 
 // Instruments
 
 export const App = () => {
     return (
-        <main>
-            <h1>Продвинутый виджет погоды</h1>
-        </main>
+        <div id = 'root'>
+            <main>
+                <Filter />
+                <Head />
+                <CurrentWeather />
+                <Forecast />
+            </main>
+        </div>
     );
 };
 
