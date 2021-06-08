@@ -8,36 +8,39 @@ export const CurrentWeather = () => {
     const { data, isFetched } = useForecast();
     const selectedDayId = useSelector(getDay);
 
-    const chosenDay =  selectedDayId.id !== '' ? data?.find((el, i) => i === 0)
-        : data?.find((el) => el.id === selectedDayId.id);
+    const chosenDay =  selectedDayId
+        ? data.find((el) => el.id === selectedDayId) : data?.[ 0 ];
 
-    if (!isFetched && selectedDayId.id !== '') {
+    console.log('chosenDay:', chosenDay);
+
+    if (!isFetched && selectedDayId) {
         return 'Загрузка...';
     }
 
     return (
         <>
             <div className = 'head'>
-                { /* <div className = { `icon ${data.type}` }></div> */ }
+                <div className = { `icon ${data?.type}` }></div>
                 <div className = 'current-date'>
-                    <p> 2222
+                    <p>
                         { /* { format(chosenDay.day, 'EEEE') } */ }
+                        { chosenDay?.day && format(chosenDay?.day, 'EEEE') }
                     </p>
-                    <span> 555
-                        { /* { format(chosenDay.day, 'dd LLLL') } */ }
+                    <span>
+                        { chosenDay?.day && format(chosenDay?.day, 'dd LLLL') }
                     </span>
                 </div>
             </div>
             <div className = 'current-weather'>
-                <p className = 'temperature'>88888
-                    { /* { chosenDay.temperature } */ }
+                <p className = 'temperature'>
+                    { chosenDay?.temperature }
                 </p>
                 <p className = 'meta'>
-                    <span className = 'rainy'>54545
-                        { /* { chosenDay.rain_probability } */ }
+                    <span className = 'rainy'>
+                        { chosenDay?.rain_probability }
                     </span>
-                    <span className = 'humidity'>54654
-                        { /* { chosenDay.humidity } */ }
+                    <span className = 'humidity'>
+                        { chosenDay?.humidity }
                     </span>
                 </p>
             </div>

@@ -13,9 +13,9 @@ export const App = () => {
 
     useEffect(() => {
         if (Array.isArray(data)) {
-            dispatch(dayAction.setDay(data?.find((el, i) => i === 0)));
+            dispatch(dayAction.setDay(data?.[ 0 ]));
         }
-    }, []);
+    }, [data]);
 
     return (
         <div id = 'root'>

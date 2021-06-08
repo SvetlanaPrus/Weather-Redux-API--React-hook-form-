@@ -15,14 +15,15 @@ export const ForecastAllDays = () => {
             // dispatch(setChosenDays(days));
             dispatch(dayAction.setDay(data?.[ 0 ]));
         }
-    },  []);
+    },  [data]);
 
 
     const setSelectedDayId = (id) => {
         dispatch(dayAction.setDay(id));
     };
 
-    const listOfDays = isFetched && data?.slice(0, 7)
+    const listOfDays = isFetched && data
+        .slice(0, 7)
         .map((el) => {
             return (
                 <div
