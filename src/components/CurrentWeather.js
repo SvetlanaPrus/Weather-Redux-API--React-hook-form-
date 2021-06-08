@@ -9,7 +9,9 @@ export const CurrentWeather = () => {
     const selectedDayId = useSelector(getDay);
 
     const chosenDay =  selectedDayId
-        ? data.find((el) => el.id === selectedDayId) : data?.[ 0 ];
+        // ? data.find((el) => el.id === selectedDayId) : data?.[ 0 ];
+        ? data?.find((el) => el.id === selectedDayId) : data?.find((el, i) => i === 0);
+
 
     console.log('chosenDay:', chosenDay);
 
@@ -18,12 +20,11 @@ export const CurrentWeather = () => {
     }
 
     return (
-        <>
+        <div>
             <div className = 'head'>
-                <div className = { `icon ${data?.type}` }></div>
+                <div className = { `icon ${chosenDay?.type}` }></div>
                 <div className = 'current-date'>
                     <p>
-                        { /* { format(chosenDay.day, 'EEEE') } */ }
                         { chosenDay?.day && format(chosenDay?.day, 'EEEE') }
                     </p>
                     <span>
@@ -44,6 +45,6 @@ export const CurrentWeather = () => {
                     </span>
                 </p>
             </div>
-        </>
+        </div>
     );
 };

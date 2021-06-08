@@ -13,7 +13,7 @@ export const ForecastAllDays = () => {
     useEffect(() => {
         if (Array.isArray(data)) {
             // dispatch(setChosenDays(days));
-            dispatch(dayAction.setDay(data?.[ 0 ]));
+            dispatch(dayAction.setDay(data?.[ 0 ].id));
         }
     },  [data]);
 
