@@ -1,9 +1,7 @@
-// Core
 import { combineReducers } from 'redux';
-
-// Reducers
-
+import { dayReducer as day } from '../reducers/dayReducer';
 
 export const rootReducer = combineReducers({
-    tmp: () => ({}),
+    // tmp: () => ({ day }),
+    day,
 });

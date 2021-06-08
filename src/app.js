@@ -1,21 +1,19 @@
 // Components
 import React from 'react';
-import { Filter } from './components/Filter';
-import { Head } from './components/Head';
-import { CurrentWeather } from './components/CurrentWeather';
-import { Forecast } from './components/Forecast';
+import {
+    Filter, CurrentWeather, ForecastAllDays,
+} from './components';
 
-// Instruments
 
 export const App = () => {
     return (
         <div id = 'root'>
             <main>
                 <Filter />
-                <Head />
                 <CurrentWeather />
-                <Forecast />
+                <ForecastAllDays />
             </main>
+
         </div>
     );
 };

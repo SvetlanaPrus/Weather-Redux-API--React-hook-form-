@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Filter = () => {
     return (
-        <div className = 'filter'>
+        <form className = 'filter'>
             <span className = 'checkbox'>Облачно</span>
             <span className = 'checkbox'>Солнечно</span>
             <p className = 'custom-input'>
@@ -17,7 +17,7 @@ export const Filter = () => {
                     id = 'max-temperature' type = 'number'
                     value = '' />
             </p>
-            <button disabled = ''>Отфильтровать</button>
-        </div>
+            <button disabled = '' >Отфильтровать</button>
+        </form>
     );
 };
