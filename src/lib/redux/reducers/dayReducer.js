@@ -1,13 +1,7 @@
-import { dayType } from '../types/dayType';
+import { dayType } from '../types';
 
 const initialState = {
-    id:               '',
-    completed:        true,
-    rain_probability: 0,
-    humidity:         0,
-    day:              0,
-    temperature:      0,
-    type:             '',
+    day: '',
 };
 
 
@@ -15,7 +9,8 @@ export const dayReducer = (state = initialState, action) => {
     switch (action.type) {
     case dayType.SET_DAY: {
         return {
-            state: action.payload,
+            ...state,
+            day: action.payload,
         };
     }
     default: {

@@ -1,3 +1,3 @@
 export const getDay = (state) => {
-    return state.data;
+    return state.dayReducer.day;
 };
