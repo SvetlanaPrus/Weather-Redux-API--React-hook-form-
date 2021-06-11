@@ -1,3 +1,3 @@
 export * from './CurrentWeather';
-export * from './Filter';
+export * from './Filter/Filter';
 export * from './ForecastAllDays';

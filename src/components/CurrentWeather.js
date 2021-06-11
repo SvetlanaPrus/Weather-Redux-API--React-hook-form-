@@ -13,8 +13,6 @@ export const CurrentWeather = () => {
         ? data?.find((el) => el.id === selectedDayId) : data?.find((el, i) => i === 0);
 
 
-    console.log('chosenDay:', chosenDay);
-
     if (!isFetched && selectedDayId) {
         return 'Загрузка...';
     }

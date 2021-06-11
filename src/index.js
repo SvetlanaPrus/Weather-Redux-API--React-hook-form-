@@ -10,7 +10,7 @@ import { App } from './app';
 // Instruments
 import './theme/index.scss';
 import { queryClient } from './lib/react-query';
-import { store } from './lib/redux/init/store';
+import { store } from './lib/redux/init';
 
 render(
     <Provider store = { store }>

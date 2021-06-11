@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { dayReducer } from '../reducers';
+import { dayReducer, filterReducer, resetReducer } from '../reducers';
 
 export const rootReducer = combineReducers({
-    dayReducer,
+    dayReducer, filterReducer, resetReducer,
 });
