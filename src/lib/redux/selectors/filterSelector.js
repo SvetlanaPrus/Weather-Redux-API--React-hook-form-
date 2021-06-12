@@ -1,3 +1,5 @@
+import { filterReducer } from '../reducers';
+
 export const getFilter = (state) => {
-    return state.filterReducer;
+    return state.filterReducer.filter;
 };

@@ -1,9 +1,11 @@
 import { filterType } from '../types';
 
 const initialState = {
-    dayType: '',
-    minTemp: null,
-    maxTemp: null,
+    filter: {
+        dayType: '',
+        minTemp: '',
+        maxTemp: '',
+    },
 };
 
 export const filterReducer = (state = initialState, action) => {
@@ -11,9 +13,7 @@ export const filterReducer = (state = initialState, action) => {
     case filterType.SET_FILTER: {
         return {
             ...state,
-            dayType: action.payload.dayType,
-            minTemp: action.payload.minTemp,
-            maxTemp: action.payload.maxTemp,
+            filter: action.payload,
         };
     }
     default: {

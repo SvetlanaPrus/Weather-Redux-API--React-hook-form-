@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { getDay } from '../lib/redux/selectors';
 import { useForecast } from '../hooks';
 
-export const CurrentWeather = () => {
-    const { data, isFetched } = useForecast();
+export const CurrentWeather = ({ data, isFetched }) => {
+    // const { data, isFetched } = useForecast();
     const selectedDayId = useSelector(getDay);
 
     const chosenDay =  selectedDayId
