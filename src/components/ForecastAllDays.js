@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
-import { useForecast } from '../hooks';
-import { fetchify, filterDays } from '../helpers';
+import { fetchify } from '../helpers';
 import { dayAction } from '../lib/redux/actions';
-import { getDay, getFilter } from '../lib/redux/selectors';
+import { getDay } from '../lib/redux/selectors';
 
 export const ForecastAllDays = ({ data, isFetched }) => {
-    // const { data, isFetched } = useForecast();
     const dispatch = useDispatch();
     const selectedDayId = useSelector(getDay);
 
@@ -15,7 +13,7 @@ export const ForecastAllDays = ({ data, isFetched }) => {
         dispatch(dayAction.setDay(id));
     };
 
-    const listOfDays = isFetched && data?.slice(0, 7)
+    const listOfDays = isFetched && data.slice(0, 7)
         .map((el) => {
             return (
                 <div

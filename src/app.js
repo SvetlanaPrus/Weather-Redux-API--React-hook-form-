@@ -6,7 +6,6 @@ import {
 import { useForecast } from './hooks';
 import { dayAction } from './lib/redux/actions';
 import { getFilter } from './lib/redux/selectors';
-import { dayReducer } from './lib/redux/reducers';
 
 
 export const App = () => {

@@ -2,10 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 import { useSelector } from 'react-redux';
 import { getDay } from '../lib/redux/selectors';
-import { useForecast } from '../hooks';
 
 export const CurrentWeather = ({ data, isFetched }) => {
-    // const { data, isFetched } = useForecast();
     const selectedDayId = useSelector(getDay);
 
     const chosenDay =  selectedDayId
